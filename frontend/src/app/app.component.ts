@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const res = await fetch('http://localhost:8080/status');
+      const res = await fetch('/api/v1/status');
       if (res.ok) {
         const body = await res.json();
         if (body.status === 'running') {
