@@ -1,0 +1,15 @@
+<div class="main-container">
+  <div class="status-card" [ngClass]="serverStatus">
+    <div class="icon-container">
+      <div *ngIf="serverStatus === 'checking'" class="spinner"></div>
+      <div *ngIf="serverStatus === 'accessible'" class="icon-success">✓</div>
+      <div *ngIf="serverStatus === 'not-accessible'" class="icon-error">✗</div>
+    </div>
+    
+    <h1 class="status-title">Backend Status</h1>
+    
+    <p *ngIf="serverStatus === 'checking'" class="status-message">Checking connection to server...</p>
+    <p *ngIf="serverStatus === 'accessible'" class="status-message success">Server is accessible</p>
+    <p *ngIf="serverStatus === 'not-accessible'" class="status-message error">Server is not accessible</p>
+  </div>
+</div>
